@@ -34,7 +34,7 @@ kernel void voronoi(global Vec3f *pixels, global const Vec3f *points,
     else
         pixels[I] = Vec3fFrom(interp(points[m_i].x, 0, WIDTH, 0, 1), 
                               interp(points[m_i].x + points[m_i].y, 0, HEIGHT + WIDTH, 0, 1), 
-                              interp(points[m_i].x * points[m_i].y, 0, HEIGHT * WIDTH, 0, 1));
+                              interp(points[m_i].y, 0, HEIGHT, 1, 0));
     if (d2 <= 15)
             pixels[I] = Vec3fFromScalar(0.0);
 
